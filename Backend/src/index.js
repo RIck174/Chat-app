@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-if(process.env.Node_Env==="production"){
+if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(_dirname, "../Frontend/dist")));
 
     app.get("*", (req, res) => {
